@@ -4,7 +4,7 @@ require 'minitest/autorun'
 
 class TestItSorts < Minitest::Test
   class Box
-    include ItSorts::SortBy
+    include ItSorts::SortSetup
 
     def initialize(weight)
       @weight = weight
@@ -24,7 +24,7 @@ class TestItSorts < Minitest::Test
   end
 
   class BankAccount
-    include ItSorts::SortBy
+    include ItSorts::SortSetup
 
     def initialize(balance)
       @balance = balance
@@ -44,7 +44,7 @@ class TestItSorts < Minitest::Test
   end
 
   class Task
-    include ItSorts::SortBy
+    include ItSorts::SortSetup
 
     def initialize(importance, time_cost)
       @importance = importance
@@ -65,7 +65,7 @@ class TestItSorts < Minitest::Test
   end
 
   class Line
-    include ItSorts::SortBy
+    include ItSorts::SortSetup
     include ItSorts::Sorters
 
     def initialize(length)
