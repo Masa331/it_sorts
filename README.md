@@ -27,14 +27,14 @@ def <=>(other)
   -1 * importance <=> -1 * other.importance
 end
 ```
-Then sometimes you want sort by more than one attribute. And you may also want to sort by one of them descendingly but ascendingly by the second one:
+Then sometimes you to want sort by more than one attribute. And you may also want to sort by one of them descendingly but ascendingly by the second one:
 ```
 def <=>(other)
   [-1 * importance, time_cost] <=> [-1 * other.importance, other.time_cost]
 end
 ```
 
-For me personally it was kinda hard to understand it the first time around. Why the flip? Also what comes first, `other` or `self`? What's the default sort order? So i wrote this gem. With ItSorts you can write this instead:
+Me personally, i had trouble to understand it properly first time. And then second time when i forgot the first time. What comes first, `other` or `self`? Why the flip? What's the default sort order? So i wrote this gem. With `ItSorts` you can write this instead:
 
 ```ruby
 require 'it_sorts'
@@ -56,7 +56,7 @@ If you sort by just one attribute:
   end
 ```
 
-And there is `.asc` alias to `.ascending` and `.desc` to `.descending`. Also if you include ItSorts::Sorters in your class you don't have to write `ItSorts` before sorters methods:
+And there is `.asc` alias to `.ascending` and `.desc` to `.descending`. Also if you include ItSorts::Sorters in your class you don't have to write `ItSorts` before sorter methods:
 ```ruby
 require 'it_sorts'
 
@@ -73,6 +73,8 @@ end
 ```
 
 This gem doesn't need much to work really. It's about 20 LOC. If you find it too little to be in a gem look inside and copy the modules right inside your projects :)
+
+Also, if you had any other trouble with sorting in Ruby, let me know please, i'm definitelly interested.
 
 Have a good one!
 
