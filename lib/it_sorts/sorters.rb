@@ -1,11 +1,13 @@
 module ItSorts
   module Sorters
-    def asc(value)
+    def ascending(value)
       value
     end
+    alias asc ascending
 
-    def desc(value)
+    def descending(value)
       -1 * value
     end
+    alias desc descending
   end
 end

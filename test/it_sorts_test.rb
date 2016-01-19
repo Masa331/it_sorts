@@ -11,7 +11,7 @@ class TestItSorts < Minitest::Test
     end
 
     def sort_setup
-      ItSorts.asc(@weight)
+      ItSorts.ascending(@weight)
     end
   end
 
@@ -31,7 +31,7 @@ class TestItSorts < Minitest::Test
     end
 
     def sort_setup
-      [ItSorts.desc(@balance)]
+      [ItSorts.descending(@balance)]
     end
   end
 
@@ -52,7 +52,7 @@ class TestItSorts < Minitest::Test
     end
 
     def sort_setup
-      [ItSorts.desc(@importance), ItSorts.asc(@time_cost)]
+      [ItSorts.descending(@importance), ItSorts.ascending(@time_cost)]
     end
   end
 
@@ -73,7 +73,7 @@ class TestItSorts < Minitest::Test
     end
 
     def sort_setup
-      asc(@length)
+      ascending(@length)
     end
   end
 
@@ -83,5 +83,43 @@ class TestItSorts < Minitest::Test
     task3 = Line.new(3)
 
     assert_equal [task1, task2, task3], [task3, task1, task2].sort
+  end
+
+  class Glass
+    include ItSorts::SortSetup
+
+    def initialize(capacity)
+      @capacity = capacity
+    end
+
+    def sort_setup
+      ItSorts.asc(@capacity)
+    end
+  end
+
+  def test_asc_alias
+    glass1 = Glass.new(1)
+    glass2 = Glass.new(2)
+
+    assert_equal [glass1, glass2], [glass2, glass1].sort
+  end
+
+  class Screen
+    include ItSorts::SortSetup
+
+    def initialize(resolution)
+      @resolution = resolution
+    end
+
+    def sort_setup
+      ItSorts.desc(@resolution)
+    end
+  end
+
+  def test_desc_alias
+    screen1 = Screen.new(1)
+    screen2 = Screen.new(2)
+
+    assert_equal [screen2, screen1], [screen1, screen2].sort
   end
 end
