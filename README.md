@@ -1,5 +1,6 @@
 # ItSorts - tiny sorting helper
 
+[![Build Status](https://travis-ci.org/Masa331/it_sorts.svg?branch=master)](https://travis-ci.org/Masa331/it_sorts)
 [![Code Climate](https://codeclimate.com/github/Masa331/it_sorts/badges/gpa.svg)](https://codeclimate.com/github/Masa331/it_sorts)
 
 **ItSorts provides a tiny helper for comprehensible array sorting.**
