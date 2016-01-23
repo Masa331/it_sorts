@@ -5,6 +5,10 @@
 
 **ItSorts provides a tiny helper for comprehensible array sorting.**
 
+[![asciicast](https://asciinema.org/a/34559.png)](https://asciinema.org/a/34559)
+
+## How `Array#sort` works and how to use ItSorts
+
 If you want to use `Array#sort` with your custom POROs you have to define `#<=>(other)` on them:
 
 ```ruby
