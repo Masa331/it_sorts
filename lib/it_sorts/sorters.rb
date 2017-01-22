@@ -1,4 +1,5 @@
 module ItSorts
+  # This module contains sort helpers you can use in your `sort_setup` method.
   module Sorters
     def ascending(value)
       value
